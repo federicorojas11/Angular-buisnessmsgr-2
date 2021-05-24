@@ -1,0 +1,12 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.nav-links {
+  padding-right: 1em;
+  margin-right: 2em;
+
+  & a {
+    margin-right: 8%;
+  }
+}
