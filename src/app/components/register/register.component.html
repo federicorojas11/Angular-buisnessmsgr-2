@@ -1,8 +1,37 @@
 <p>
   <mat-form-field appearance="outline">
-    <mat-label>Standard form field</mat-label>
-    <input matInput placeholder="Nombre">
+    <mat-label>Usuario</mat-label>
+    <input matInput placeholder="Nombre de usuario">
     <mat-icon [ngStyle]="{ color: 'white' }" matSuffix>sentiment_very_satisfied</mat-icon>
-    <mat-hint>Ingrese su nombre</mat-hint>
+    <mat-hint>Ingrese un nuevo nombre de usuario</mat-hint>
   </mat-form-field>
 </p>
+<p>
+  <mat-form-field appearance="outline">
+    <mat-label>Contraseña</mat-label>
+    <input matInput placeholder="Password">
+    <mat-icon [ngStyle]="{ color: 'white' }" matSuffix>sentiment_very_satisfied</mat-icon>
+    <mat-hint>Ingrese contraseña para su cuenta</mat-hint>
+  </mat-form-field>
+</p>
+<p>
+  <mat-form-field appearance="fill">
+    <mat-label>Seleccionar</mat-label>
+    <mat-select>
+      <mat-option value="argentina">Argentina</mat-option>
+      <mat-option value="brasil">Brasil</mat-option>
+      <mat-option value="españa">España</mat-option>
+      <mat-option value="chile">Chile</mat-option>
+      <mat-option value="uruguay">Uruguay</mat-option>
+    </mat-select>
+  </mat-form-field>
+</p>
+<p>
+  <mat-form-field appearance="outline">
+    <mat-label>Ciudad</mat-label>
+    <input matInput placeholder="Ciudad">
+    <mat-icon [ngStyle]="{ color: 'white' }" matSuffix>sentiment_very_satisfied</mat-icon>
+    <mat-hint>Ingrese su ciudad</mat-hint>
+  </mat-form-field>
+</p>
+<button mat-button color="primary">Registrarme</button>
