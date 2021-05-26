@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { InboxComponent } from './inbox.component';
-import { RecivedComponent } from './recived/recived.component';
 import { SentComponent } from './sent/sent.component';
 import { NewComponent } from './new/new.component';
+import { ReceivedComponent } from './received/received.component';
 
 
 
 @NgModule({
   declarations: [
     InboxComponent,
-    RecivedComponent,
     SentComponent,
-    NewComponent
+    NewComponent,
+    ReceivedComponent
   ],
   imports: [
     CommonModule
