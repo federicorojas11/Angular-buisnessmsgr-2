@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'TP-angular-icaro-businessmsgr';
+  title = 'Buisness MSGR';
 }

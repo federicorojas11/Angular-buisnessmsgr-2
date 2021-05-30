@@ -10,7 +10,8 @@
 mat-toolbar {
   border-bottom: 3px solid rgba(255, 255, 255, 0.507);
   background: linear-gradient(rgb(12, 5, 32), rgb(2, 1, 66));
-  min-height: 100px;
+  min-height: 10vh;
+  min-width: 100vw;
 
   & .title {
     visibility: hidden;
@@ -28,7 +29,11 @@ mat-toolbar {
     height: 75px;
     filter: drop-shadow(0.13rem 0.35rem 0.4rem rgb(139, 168, 168))
       contrast(175%) brightness(95%);
-    -webkit-user-drag: none;
     user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    pointer-events: none;
   }
 }

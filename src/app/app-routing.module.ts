@@ -1,3 +1,4 @@
+import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/inbox/dashboard/dashboard.component';
 import { InboxComponent } from './components/inbox/inbox.component';
 import { ReceivedComponent } from './components/inbox/received/received.component';
@@ -12,8 +13,8 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'contacto', component: ContactoComponent },
   {
-    path: 'servicios',
-    component: ServiciosComponent,
+    path: 'login',
+    component: LoginComponent,
   },
   {
     path: 'inbox',
