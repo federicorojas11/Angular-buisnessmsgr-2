@@ -1,3 +1,5 @@
+import { InboxComponent } from './components/inbox/inbox.component';
+import { ReceivedComponent } from './components/inbox/received/received.component';
 import { ServiciosComponent } from './components/servicios/servicios.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { HomeComponent } from './components/home/home.component';
@@ -11,6 +13,14 @@ const routes: Routes = [
   {
     path: 'servicios',
     component: ServiciosComponent,
+  },
+  {
+    path: 'inbox',
+    component: InboxComponent,
+  },
+  {
+    path: 'inbox/received',
+    component: ReceivedComponent,
   },
 ];
 
