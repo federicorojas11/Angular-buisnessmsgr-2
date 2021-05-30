@@ -5,17 +5,13 @@ import { SentComponent } from './sent/sent.component';
 import { NewComponent } from './new/new.component';
 import { ReceivedComponent } from './received/received.component';
 
-
-
 @NgModule({
   declarations: [
     InboxComponent,
     SentComponent,
     NewComponent,
-    ReceivedComponent
+    ReceivedComponent,
   ],
-  imports: [
-    CommonModule
-  ]
+  imports: [CommonModule],
 })
-export class InboxModule { }
+export class InboxModule {}

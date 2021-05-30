@@ -1,5 +1,6 @@
-import { ReceivedComponent } from './received/received.component';
-import { Component, OnInit, EventEmitter, ViewChild } from '@angular/core';
+import { Mensaje } from './models/message';
+import { MessaggesService } from './messagges.service';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-inbox',
@@ -7,13 +8,11 @@ import { Component, OnInit, EventEmitter, ViewChild } from '@angular/core';
   styleUrls: ['./inbox.component.scss'],
 })
 export class InboxComponent implements OnInit {
-  @ViewChild(ReceivedComponent) child: any;
+  countMessagges = 0;
 
-  constructor() {}
-  total = '0';
+  constructor(private _messaggesService: MessaggesService) {}
 
-  ngOnInit(): void {}
-  ngAfterViewInit(): void {
-    this.total = this.child.total;
+  ngOnInit(): void {
+    this.countMessagges = this._messaggesService.getMensajes().length;
   }
 }
