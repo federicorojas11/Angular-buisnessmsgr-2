@@ -1,3 +1,4 @@
+import { DashboardComponent } from './components/inbox/dashboard/dashboard.component';
 import { InboxComponent } from './components/inbox/inbox.component';
 import { ReceivedComponent } from './components/inbox/received/received.component';
 import { ServiciosComponent } from './components/servicios/servicios.component';
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'inbox/received',
     component: ReceivedComponent,
+  },
+  {
+    path: 'inbox/dashboard',
+    component: DashboardComponent,
   },
 ];
 

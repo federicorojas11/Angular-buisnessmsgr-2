@@ -1,5 +1,4 @@
-import { Mensaje } from './models/message';
-import { MessaggesService } from './messagges.service';
+import { MessagesService } from './messages.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -10,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class InboxComponent implements OnInit {
   countMessagges = 0;
 
-  constructor(private _messaggesService: MessaggesService) {}
+  constructor(private _messaggesService: MessagesService) {}
 
   ngOnInit(): void {
     this.countMessagges = this._messaggesService.getMensajes().length;

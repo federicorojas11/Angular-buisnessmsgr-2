@@ -1,5 +1,5 @@
 import { Mensaje } from './../models/message';
-import { MessaggesService } from './../messagges.service';
+import { MessagesService } from '../messages.service';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
@@ -10,7 +10,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 export class ReceivedComponent implements OnInit {
   mensajes: Mensaje[] = [];
 
-  constructor(private _servicioMensajes: MessaggesService) {}
+  constructor(private _servicioMensajes: MessagesService) {}
 
   ngOnInit(): void {
     this.mensajes = this._servicioMensajes.getMensajes();
