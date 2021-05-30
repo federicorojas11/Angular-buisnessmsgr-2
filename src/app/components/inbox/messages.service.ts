@@ -47,7 +47,35 @@ export class MessagesService {
     },
   ];
 
+  enviados = [
+    {
+      id: 1,
+      titulo: 'Enviado 11',
+      mensaje: 'Est do sit cillum aute nulla amet aute esse.',
+      destinatario: 'Irure amet',
+      time: new Date(),
+    },
+    {
+      id: 2,
+      titulo: 'Enviado 22',
+      mensaje: 'Est do sit cillum',
+      destinatario: 'Irure amet Irure amet',
+      time: new Date(),
+    },
+    {
+      id: 3,
+      titulo: 'Enviado 33',
+      mensaje: 'aute nulla amet aute esse.',
+      destinatario: 'amet Irure',
+      time: new Date(),
+    },
+  ];
+
   getMensajes() {
     return this.mensajes;
+  }
+
+  getEnviados() {
+    return this.enviados;
   }
 }
