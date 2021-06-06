@@ -1,17 +1,22 @@
-<p>
-  <mat-form-field appearance="outline">
-    <mat-label>Usuario</mat-label>
-    <input matInput placeholder="Nombre de usuario">
-    <mat-icon [ngStyle]="{ color: 'white' }" matSuffix>sentiment_very_satisfied</mat-icon>
-    <mat-hint>Ingrese un nuevo nombre de usuario</mat-hint>
-  </mat-form-field>
-</p>
-<p>
-  <mat-form-field appearance="outline">
-    <mat-label>Contraseña</mat-label>
-    <input matInput placeholder="Password">
-    <mat-icon [ngStyle]="{ color: 'white' }" matSuffix>sentiment_very_satisfied</mat-icon>
-    <mat-hint>Ingrese contraseña para su cuenta</mat-hint>
-  </mat-form-field>
-</p>
-<button mat-button color="primary">Ingresar </button>
+<div class="container">
+  <img src="../../../assets/enter.png" class="imglog">
+  <h1>Ingresar a mi cuenta</h1>
+
+  <div class="container__form">
+    <mat-form-field appearance="outline">
+      <mat-label>Usuario</mat-label>
+      <input matInput placeholder="Nombre de usuario">
+      <mat-icon [ngStyle]="{ color: 'white' }" matSuffix>sentiment_very_satisfied</mat-icon>
+      <mat-hint>Ingrese un nuevo nombre de usuario</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Contraseña </mat-label>
+      <input matInput placeholder="Password">
+      <mat-icon [ngStyle]="{ color: 'white' }" matSuffix>sentiment_very_satisfied</mat-icon>
+      <mat-hint>Ingrese contraseña para su cuenta</mat-hint>
+    </mat-form-field>
+
+    <button mat-button color="primary">Ingresar </button>
+  </div>
+</div>
