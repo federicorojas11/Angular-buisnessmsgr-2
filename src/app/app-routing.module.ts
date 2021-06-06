@@ -1,8 +1,8 @@
+import { MessagesComponent } from './components/messages/messages.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
-import { DashboardComponent } from './components/inbox/dashboard/dashboard.component';
-import { InboxComponent } from './components/inbox/inbox.component';
-import { ReceivedComponent } from './components/inbox/received/received.component';
+import { InboxComponent } from './components/messages/inbox/inbox.component';
+import { ReceivedComponent } from './components/messages/received/received.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { HomeComponent } from './components/home/home.component';
 import { NgModule } from '@angular/core';
@@ -21,21 +21,16 @@ const routes: Routes = [
     component: RegisterComponent,
   },
   {
-    path: 'inbox',
-    redirectTo: 'inbox/dashboard',
-    pathMatch: 'full',
+    path: 'messages',
+    component: MessagesComponent,
   },
   {
-    path: 'inbox/dashboard',
-    component: DashboardComponent,
+    path: 'messages/inbox',
+    component: InboxComponent,
   },
   {
-    path: 'inbox/received',
+    path: 'messages/received',
     component: ReceivedComponent,
-  },
-  {
-    path: 'inbox/dashboard',
-    component: DashboardComponent,
   },
 ];
 

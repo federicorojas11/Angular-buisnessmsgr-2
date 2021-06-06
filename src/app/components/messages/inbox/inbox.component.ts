@@ -1,15 +1,15 @@
-import { HeaderComponent } from './../../../shared/header/header.component';
+import { HeaderComponent } from '../../../shared/header/header.component';
 import { MessagesService } from '../messages.service';
 import { Component, OnInit } from '@angular/core';
 HeaderComponent;
 MessagesService;
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss'],
+  selector: 'app-inbox',
+  templateUrl: './inbox.component.html',
+  styleUrls: ['./inbox.component.scss'],
 })
-export class DashboardComponent implements OnInit {
+export class InboxComponent implements OnInit {
   msjRecibidos = 0;
   msjEnviados = 0;
 

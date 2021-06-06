@@ -1,4 +1,4 @@
-import { Mensaje } from './../models/message';
+import { Mensaje } from '../models/message';
 import { MessagesService } from '../messages.service';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
