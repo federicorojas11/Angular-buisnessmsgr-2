@@ -7,11 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./inbox.component.scss'],
 })
 export class InboxComponent implements OnInit {
-  countMessagges = 0;
-
   constructor(private _messaggesService: MessagesService) {}
 
-  ngOnInit(): void {
-    this.countMessagges = this._messaggesService.getMensajes().length;
-  }
+  ngOnInit(): void {}
 }

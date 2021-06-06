@@ -3,7 +3,6 @@ import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/inbox/dashboard/dashboard.component';
 import { InboxComponent } from './components/inbox/inbox.component';
 import { ReceivedComponent } from './components/inbox/received/received.component';
-import { ServiciosComponent } from './components/servicios/servicios.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { HomeComponent } from './components/home/home.component';
 import { NgModule } from '@angular/core';
@@ -23,7 +22,12 @@ const routes: Routes = [
   },
   {
     path: 'inbox',
-    component: InboxComponent,
+    redirectTo: 'inbox/dashboard',
+    pathMatch: 'full',
+  },
+  {
+    path: 'inbox/dashboard',
+    component: DashboardComponent,
   },
   {
     path: 'inbox/received',
