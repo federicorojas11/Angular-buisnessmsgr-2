@@ -10,12 +10,7 @@ MessagesService;
   styleUrls: ['./inbox.component.scss'],
 })
 export class InboxComponent implements OnInit {
-  msjRecibidos = 0;
-  msjEnviados = 0;
-
   constructor(private _messaggesService: MessagesService) {}
 
-  ngOnInit(): void {
-    this.msjRecibidos = this._messaggesService.getMensajes().length;
-  }
+  ngOnInit(): void {}
 }

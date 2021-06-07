@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class MessagesService {
   constructor() {}
 
-  mensajes = [
+  recibidos = [
     {
       id: 1,
       titulo: 'Test mensaje 1',
@@ -71,8 +71,8 @@ export class MessagesService {
     },
   ];
 
-  getMensajes() {
-    return this.mensajes;
+  getRecibidos() {
+    return this.recibidos;
   }
 
   getEnviados() {

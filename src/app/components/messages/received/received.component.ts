@@ -13,7 +13,7 @@ export class ReceivedComponent implements OnInit {
   constructor(private _servicioMensajes: MessagesService) {}
 
   ngOnInit(): void {
-    this.mensajes = this._servicioMensajes.getMensajes();
+    this.mensajes = this._servicioMensajes.getRecibidos();
   }
 
   displayMessagges() {
