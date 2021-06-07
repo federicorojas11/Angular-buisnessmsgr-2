@@ -7,7 +7,6 @@ import { SentComponent } from './sent/sent.component';
 import { NewComponent } from './new/new.component';
 import { ReceivedComponent } from './received/received.component';
 import { InboxComponent } from './inbox/inbox.component';
-RouterModule;
 
 @NgModule({
   declarations: [
@@ -20,4 +19,4 @@ RouterModule;
   ],
   imports: [CommonModule, RouterModule],
 })
-export class InboxModule {}
+export class MessagesModule {}

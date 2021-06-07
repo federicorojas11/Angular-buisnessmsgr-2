@@ -4,7 +4,9 @@
 
     <h5>{{ msjRecibidos }} memorandos recibidos </h5>
     <h5>{{ msjEnviados }} memorandos enviados </h5>
-    [routerLink]="['/inbox']" routerLinkActive="router-link-active"
-    <img src="../../../../assets/received.png" alt="lectura memorandos">
-  </div>
-</div>
+
+    <p>Mensajes recibidos:</p>
+    <tr *ngFor="let mensaje of Debug">
+      <td>{{mensaje.id}}</td>
+
+    </tr>
