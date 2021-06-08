@@ -14,6 +14,7 @@ export class MessagesService {
         'Magna dolore ipsum sit occaecat labore ex elit nulla culpa ad exercitation reprehenderit.',
       remitente: 'Irure amet',
       time: new Date(),
+      readed: true,
     },
     {
       id: 2,
@@ -22,6 +23,7 @@ export class MessagesService {
         'Ma sit labore ex elit nulla culpa ad exercitation reprehenderit.',
       remitente: 'irure amet',
       time: new Date(),
+      readed: true,
     },
     {
       id: 3,
@@ -29,6 +31,7 @@ export class MessagesService {
       mensaje: 'ex elit nulla culpa ad.',
       remitente: 'amet',
       time: new Date(),
+      readed: false,
     },
     {
       id: 4,
@@ -36,6 +39,7 @@ export class MessagesService {
       mensaje: 'afed exercitation reprehenderit.',
       remitente: 'Irure irure',
       time: new Date(),
+      readed: false,
     },
     {
       id: 5,
@@ -44,6 +48,7 @@ export class MessagesService {
         'occaecat labore ex elit nulla culpa ad exercitation reprehenderit.',
       remitente: 'I. amet',
       time: new Date(),
+      readed: true,
     },
   ];
 

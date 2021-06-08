@@ -1,6 +1,7 @@
 import { Mensaje } from '../models/message';
 import { MessagesService } from '../messages.service';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { FixedSizeVirtualScrollStrategy } from '@angular/cdk/scrolling';
 
 @Component({
   selector: 'app-received',
@@ -18,5 +19,13 @@ export class ReceivedComponent implements OnInit {
 
   displayMessagges() {
     console.log(this.mensajes);
+  }
+
+  CountReaded() {
+    let b = 0;
+    for (let i = 0; i < this.mensajes.length; i++) {
+      if (this.mensajes[i].readed == true) b++;
+    }
+    return b;
   }
 }

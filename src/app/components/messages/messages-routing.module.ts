@@ -1,5 +1,5 @@
+import { SentComponent } from './sent/sent.component';
 import { ReceivedComponent } from './received/received.component';
-import { InboxComponent } from './inbox/inbox.component';
 import { MessagesComponent } from './messages.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -10,11 +10,11 @@ const routes: Routes = [
     component: MessagesComponent,
   },
   {
-    path: '/inbox',
-    component: InboxComponent,
+    path: 'sent',
+    component: SentComponent,
   },
   {
-    path: '/received',
+    path: 'received',
     component: ReceivedComponent,
   },
 ];

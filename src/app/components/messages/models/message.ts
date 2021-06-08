@@ -4,4 +4,5 @@ export interface Mensaje {
   mensaje: string;
   remitente: string;
   time: Date;
+  readed: boolean;
 }
