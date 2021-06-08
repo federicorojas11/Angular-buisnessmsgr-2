@@ -1,8 +1,5 @@
-import { MessagesComponent } from './components/messages/messages.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
-import { InboxComponent } from './components/messages/inbox/inbox.component';
-import { ReceivedComponent } from './components/messages/received/received.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { HomeComponent } from './components/home/home.component';
 import { NgModule } from '@angular/core';
@@ -22,15 +19,10 @@ const routes: Routes = [
   },
   {
     path: 'messages',
-    component: MessagesComponent,
-  },
-  {
-    path: 'messages/inbox',
-    component: InboxComponent,
-  },
-  {
-    path: 'messages/received',
-    component: ReceivedComponent,
+    loadChildren: () =>
+      import('./components/messages/messages.module').then(
+        (m) => m.MessagesModule
+      ),
   },
 ];
 

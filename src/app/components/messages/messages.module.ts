@@ -1,5 +1,5 @@
+import { MessagesRoutingModule } from './messages-routing.module';
 import { RouterModule } from '@angular/router';
-import { HeaderComponent } from '../../shared/header/header.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MessagesComponent } from './messages.component';
@@ -15,8 +15,7 @@ import { InboxComponent } from './inbox/inbox.component';
     NewComponent,
     ReceivedComponent,
     InboxComponent,
-    HeaderComponent,
   ],
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, MessagesRoutingModule, RouterModule],
 })
 export class MessagesModule {}
