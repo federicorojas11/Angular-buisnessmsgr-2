@@ -26,22 +26,23 @@
       max-height: 350px;
       margin: 2%;
       padding: 10px;
-      border: 1px solid #000;
+      border: 2px solid rgba(50, 36, 74, 0.338);
       background-color: rgba(240, 198, 198, 0.959);
       opacity: 0.8;
       transition: 300ms;
 
       &:hover {
         opacity: 1;
-        transform: scale(1.05);
-        margin: 2.8%;
-        margin-bottom: 1.7%;
+        //transform: scale(1.05);
+        // margin: 2.8%;
+        // margin-bottom: 1.7%;
         border: 2px solid rgba(48, 48, 48, 0.692);
         background-color: rgba(235, 151, 151, 0.959);
       }
 
       & h3 {
         font-size: 2.5rem;
+        text-decoration: none;
       }
 
       & img {
