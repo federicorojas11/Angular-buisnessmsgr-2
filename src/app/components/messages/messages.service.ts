@@ -1,6 +1,7 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { observable } from 'rxjs';
+import { Observable } from 'rxjs';
+import { catchError, retry } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
@@ -8,6 +9,20 @@ import { observable } from 'rxjs';
 export class MessagesService {
   constructor(private http: HttpClient) {}
 
+  endpoint = 'https://rickandmortyapi.com/api/character';
+
+  getMessagesDev() {
+    return this.http.get(this.endpoint);
+  }
+  /* getMessages(messages: Message): Observable<Message> {
+    this.receivedMessages = this.http.get(this.endpoint);
+
+    return this.receivedMessages.pipe(
+      catchError(this.handleError('getMessages', messages))
+    );
+  }
+ */
+  /* ------------- */
   recibidos = [
     {
       id: 1,

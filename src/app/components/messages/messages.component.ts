@@ -35,5 +35,9 @@ export class MessagesComponent implements OnInit {
     this.msjRecibidos = this._messagesService.getRecibidos().length;
     this.msjEnviados = this._messagesService.getEnviados().length;
     this.Recibidos = this._messagesService.getRecibidos();
+
+    this._messagesService.getMessagesDev().subscribe((data) => {
+      console.log(data);
+    });
   }
 }

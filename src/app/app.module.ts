@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { MessagesComponent } from './components/messages/messages.component';
 import { SharedModule } from './shared/shared.module';
 import { NgModule } from '@angular/core';
@@ -33,6 +34,7 @@ import { LoginComponent } from './components/login/login.component';
     MatInputModule,
     MatSelectModule,
     MatButtonModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
