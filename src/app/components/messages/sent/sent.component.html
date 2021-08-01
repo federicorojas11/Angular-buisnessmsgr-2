@@ -1,1 +1,14 @@
-<p>sent works!</p>
+<div class="container">
+  <div class="container__enviados">
+    <h1 class="container__enviados--title">Memorandos enviados</h1>
+
+
+    <p>Memorandos enviados:</p>
+    <div class="mensaje__container">
+      <div *ngFor="let mensaje of enviados" class="mensajes__container__mensaje">
+        <p><b>{{mensaje.destinatario}}</b></p>
+        <p>{{mensaje.time | date:'medium'}}</p>
+        <p>{{mensaje.titulo}}</p>
+        <p>{{mensaje.mensaje}}</p>
+      </div>
+    </div>
