@@ -1,0 +1,30 @@
+.container {
+  height: auto;
+  display: flex;
+
+  &__messages {
+    margin: 5%;
+    width: 100%;
+    min-width: 100%;
+
+    &--title {
+      text-shadow: blue 1px 2px 5px;
+      font-size: 2.2rem;
+    }
+
+    &__container {
+      border: 1px solid rgb(116, 116, 116);
+      display: flex;
+      padding: 1rem 2rem 1rem 2rem;
+      margin-bottom: 0.5rem;
+      width: 80%;
+      min-width: 80%;
+      background: linear-gradient(red, blue);
+
+      & h5 {
+        margin: 20px 0 0 20px;
+        font-size: 2rem;
+      }
+    }
+  }
+}

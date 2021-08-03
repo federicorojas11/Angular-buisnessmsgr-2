@@ -1,5 +1,5 @@
 import { Mensaje } from '../models/message';
-import { MessagesService } from '../messages.service';
+import { MessagesService } from '../memorandum.service';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FixedSizeVirtualScrollStrategy } from '@angular/cdk/scrolling';
 

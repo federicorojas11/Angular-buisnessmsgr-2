@@ -1,11 +1,11 @@
-import { MessagesService } from './messages.service';
+import { MessagesService } from './memorandum.service';
 import { Component, OnInit } from '@angular/core';
 import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 
 @Component({
   selector: 'app-messages',
-  templateUrl: './messages.component.html',
-  styleUrls: ['./messages.component.scss'],
+  templateUrl: './memorandum.component.html',
+  styleUrls: ['./memorandum.component.scss'],
 })
 export class MessagesComponent implements OnInit {
   msjRecibidos = 0;

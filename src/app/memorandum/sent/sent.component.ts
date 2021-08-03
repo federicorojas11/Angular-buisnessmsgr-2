@@ -1,4 +1,4 @@
-import { MessagesService } from './../messages.service';
+import { MessagesService } from '../memorandum.service';
 import { Component, OnInit } from '@angular/core';
 import { Enviado } from '../models/sent';
 
