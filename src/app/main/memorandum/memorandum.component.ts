@@ -1,13 +1,12 @@
-import { MessagesService } from './memorandum.service';
+import { MemorandumService } from './memorandum.service';
 import { Component, OnInit } from '@angular/core';
-import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 
 @Component({
-  selector: 'app-messages',
+  selector: 'app-memorandum',
   templateUrl: './memorandum.component.html',
   styleUrls: ['./memorandum.component.scss'],
 })
-export class MessagesComponent implements OnInit {
+export class MemorandumComponent implements OnInit {
   msjRecibidos = 0;
   msjEnviados = 0;
   Recibidos: any;
@@ -29,15 +28,15 @@ export class MessagesComponent implements OnInit {
       time: new Date(),
     },
   ];
-  constructor(private _messagesService: MessagesService) {}
+  constructor(private _memorandumService: MemorandumService) {}
 
   ngOnInit(): void {
-    this.msjRecibidos = this._messagesService.getRecibidos().length;
-    this.msjEnviados = this._messagesService.getEnviados().length;
-    this.Recibidos = this._messagesService.getRecibidos();
+    this.msjRecibidos = this._memorandumService.getRecibidos().length;
+    this.msjEnviados = this._memorandumService.getEnviados().length;
+    this.Recibidos = this._memorandumService.getRecibidos();
 
-    this._messagesService.getMessagesDev().subscribe((data) => {
+    /* this._memorandumService.getMessagesDev().subscribe((data) => {
       console.log(data);
-    });
+    }); */
   }
 }

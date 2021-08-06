@@ -5,10 +5,10 @@
 
     <p>Memorandos enviados:</p>
     <div class="mensaje__container">
-      <div *ngFor="let mensaje of enviados" class="mensajes__container__mensaje">
-        <p><b>{{mensaje.destinatario}}</b></p>
+      <div *ngFor="let mensaje of sent" class="mensajes__container__mensaje">
+        <p><b>{{mensaje.receiver}}</b></p>
         <p>{{mensaje.time | date:'medium'}}</p>
-        <p>{{mensaje.titulo}}</p>
-        <p>{{mensaje.mensaje}}</p>
+        <p>{{mensaje.title}}</p>
+        <p>{{mensaje.message}}</p>
       </div>
     </div>

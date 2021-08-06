@@ -1,5 +1,5 @@
-import { Mensaje } from '../models/message';
-import { MessagesService } from '../memorandum.service';
+import { Memorandum } from '../models/message';
+import { MemorandumService } from '../memorandum.service';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FixedSizeVirtualScrollStrategy } from '@angular/cdk/scrolling';
 
@@ -9,22 +9,22 @@ import { FixedSizeVirtualScrollStrategy } from '@angular/cdk/scrolling';
   styleUrls: ['./received.component.scss'],
 })
 export class ReceivedComponent implements OnInit {
-  mensajes: Mensaje[] = [];
+  memorandum: Memorandum[] = [];
 
-  constructor(private _servicioMensajes: MessagesService) {}
+  constructor(private _memorandumService: MemorandumService) {}
 
   ngOnInit(): void {
-    this.mensajes = this._servicioMensajes.getRecibidos();
+    this.memorandum = this._memorandumService.getRecibidos();
   }
 
   displayMessagges() {
-    console.log(this.mensajes);
+    console.log(this.memorandum);
   }
 
   CountReaded() {
     let b = 0;
-    for (let i = 0; i < this.mensajes.length; i++) {
-      if (this.mensajes[i].readed == true) b++;
+    for (let i = 0; i < this.memorandum.length; i++) {
+      if (this.memorandum[i].readed == true) b++;
     }
     return b;
   }

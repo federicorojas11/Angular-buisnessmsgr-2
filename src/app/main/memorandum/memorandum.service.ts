@@ -1,20 +1,22 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
-import { HttpClient } from '@angular/common/http';
-
+/* import { HttpClient } from '@angular/common/http';
+ */
 @Injectable({
   providedIn: 'root',
 })
-export class MessagesService {
-  constructor(private http: HttpClient) {}
+export class MemorandumService {
+  constructor(/* private http: HttpClient */) {}
 
   endpoint = 'https://rickandmortyapi.com/api/character';
 
-  getMessagesDev() {
+  /*   getMessagesDev() {
     return this.http.get(this.endpoint);
-  }
-  /* getMessages(messages: Message): Observable<Message> {
+  } */
+
+  /* funcion 'get' memorandums con captura de error */
+  /* getMemos(messages: Message): Observable<Message> {
     this.receivedMessages = this.http.get(this.endpoint);
 
     return this.receivedMessages.pipe(
@@ -22,48 +24,50 @@ export class MessagesService {
     );
   }
  */
+
+  /*     tests      */
   /* ------------- */
   recibidos = [
     {
       id: 1,
-      titulo: 'Test mensaje 1',
-      mensaje:
+      title: 'Test mensaje 1',
+      message:
         'Magna dolore ipsum sit occaecat labore ex elit nulla culpa ad exercitation reprehenderit.',
-      remitente: 'Irure amet',
+      from: 'Irure amet',
       time: new Date(),
       readed: true,
     },
     {
       id: 2,
-      titulo: 'Test Mensaje 2',
-      mensaje:
+      title: 'Test Mensaje 2',
+      message:
         'Ma sit labore ex elit nulla culpa ad exercitation reprehenderit.',
-      remitente: 'irure amet',
+      from: 'irure amet',
       time: new Date(),
       readed: true,
     },
     {
       id: 3,
-      titulo: 'Test mensaje N.3',
-      mensaje: 'ex elit nulla culpa ad.',
-      remitente: 'amet',
+      title: 'Test mensaje N.3',
+      message: 'ex elit nulla culpa ad.',
+      from: 'amet',
       time: new Date(),
       readed: false,
     },
     {
       id: 4,
-      titulo: 'Test mensaje IV',
-      mensaje: 'afed exercitation reprehenderit.',
-      remitente: 'Irure irure',
+      title: 'Test mensaje IV',
+      message: 'afed exercitation reprehenderit.',
+      from: 'Irure irure',
       time: new Date(),
       readed: false,
     },
     {
       id: 5,
-      titulo: 'Test mensaje cinco',
-      mensaje:
+      title: 'Test mensaje cinco',
+      message:
         'occaecat labore ex elit nulla culpa ad exercitation reprehenderit.',
-      remitente: 'I. amet',
+      from: 'I. amet',
       time: new Date(),
       readed: true,
     },
@@ -72,23 +76,23 @@ export class MessagesService {
   enviados = [
     {
       id: 1,
-      titulo: 'Enviado 11',
-      mensaje: 'Est do sit cillum aute nulla amet aute esse.',
-      destinatario: 'Irure amet',
+      title: 'Enviado 11',
+      message: 'Est do sit cillum aute nulla amet aute esse.',
+      receiver: 'Irure amet',
       time: new Date(),
     },
     {
       id: 2,
-      titulo: 'Enviado 22',
-      mensaje: 'Est do sit cillum',
-      destinatario: 'Irure amet Irure amet',
+      title: 'Enviado 22',
+      message: 'Est do sit cillum',
+      receiver: 'Irure amet Irure amet',
       time: new Date(),
     },
     {
       id: 3,
-      titulo: 'Enviado 33',
-      mensaje: 'aute nulla amet aute esse.',
-      destinatario: 'amet Irure',
+      title: 'Enviado 33',
+      message: 'aute nulla amet aute esse.',
+      receiver: 'amet Irure',
       time: new Date(),
     },
   ];

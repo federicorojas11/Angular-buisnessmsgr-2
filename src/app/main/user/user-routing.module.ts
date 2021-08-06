@@ -6,14 +6,14 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/user/login',
+    redirectTo: '',
   },
   {
-    path: '/user/login',
+    path: 'login',
     component: LoginComponent,
   },
   {
-    path: '/user/register',
+    path: 'register',
     component: RegisterComponent,
   },
 ];
@@ -22,4 +22,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class MessagesRoutingModule {}
+export class UserRoutingModule {}

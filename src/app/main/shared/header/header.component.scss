@@ -1,0 +1,38 @@
+.nav-links {
+  padding-right: 1em;
+  margin-right: 2em;
+
+  & a {
+    margin-right: 8%;
+  }
+}
+
+mat-toolbar {
+  border-bottom: 3px solid rgba(255, 255, 255, 0.507);
+  background: linear-gradient(rgb(12, 5, 32), rgb(2, 1, 66));
+  width: 100% !important;
+
+  & .title {
+    visibility: hidden;
+    &:before {
+      visibility: visible;
+      content: "Buisness MSGR";
+      font-size: 3rem;
+      padding-left: 1.5rem;
+      color: rgb(226, 226, 226);
+      text-shadow: rgba(139, 140, 228, 0.966) 2px 3px 11px;
+    }
+  }
+
+  & img {
+    height: 75px;
+    filter: drop-shadow(0.13rem 0.35rem 0.4rem rgb(139, 168, 168))
+      contrast(175%) brightness(95%);
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    pointer-events: none;
+  }
+}
