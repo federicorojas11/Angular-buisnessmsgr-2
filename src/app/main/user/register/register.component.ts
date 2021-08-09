@@ -1,3 +1,5 @@
+import { Country } from './../../memorandum/models/country';
+import { UserService } from './../user.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./register.component.scss'],
 })
 export class RegisterComponent implements OnInit {
-  constructor() {}
+  countries: Country[] = [];
 
-  ngOnInit(): void {}
+  constructor(private _userService: UserService) {}
+
+  ngOnInit(): void {
+    //  Traigo paises al front desde db
+    this._userService.getCountries().subscribe((e) => (this.countries = e));
+  }
 }
