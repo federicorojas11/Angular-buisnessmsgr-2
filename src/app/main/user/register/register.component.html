@@ -1,45 +1,66 @@
 <div class="container">
   <div class="container__form">
 
-
-
-
     <h1>Registro</h1>
-    <p>
-      <mat-form-field appearance="outline">
-        <mat-label>Usuario</mat-label>
-        <input matInput placeholder="Nombre de usuario">
-        <mat-icon [ngStyle]="{ color: 'white' }" matSuffix>sentiment_very_satisfied</mat-icon>
-        <mat-hint>Ingrese un nuevo nombre de usuario</mat-hint>
-      </mat-form-field>
-    </p>
-    <p>
-      <mat-form-field appearance="outline">
-        <mat-label>Contraseña</mat-label>
-        <input matInput placeholder="Password">
-        <mat-icon [ngStyle]="{ color: 'white' }" matSuffix>sentiment_very_satisfied</mat-icon>
-        <mat-hint>Ingrese contraseña para su cuenta</mat-hint>
-      </mat-form-field>
-    </p>
 
-    <p>
-      <mat-form-field appearance="fill">
-        <mat-label>Seleccionar</mat-label>
-        <mat-select>
-          <mat-option *ngFor="let country of countries" [value]="country.name">{{country.name}}</mat-option>
-        </mat-select>
-      </mat-form-field>
-    </p>
+    <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Nombre</mat-label>
+          <input matInput placeholder="Nombre" formControlName="name">
+          <mat-icon [ngStyle]="{ color: 'white' }" matSuffix>sentiment_very_satisfied</mat-icon>
+          <mat-hint>Ingrese su nombre</mat-hint>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Apellido</mat-label>
+          <input matInput placeholder="Apellido" formControlName="lastname">
+          <mat-icon [ngStyle]="{ color: 'white' }" matSuffix>sentiment_very_satisfied</mat-icon>
+          <mat-hint>Ingrese su apellido</mat-hint>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Usuario</mat-label>
+          <input matInput placeholder="Nombre de usuario" formControlName="user">
+          <mat-icon [ngStyle]="{ color: 'white' }" matSuffix>sentiment_very_satisfied</mat-icon>
+          <mat-hint>Ingrese un nuevo nombre de usuario</mat-hint>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Contraseña</mat-label>
+          <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'" formControlName="password">
+          <mat-icon [ngStyle]="{ color: color }" matSuffix (click)="hide = !hide">
+            {{hide?
+            'visibility_off' :
+            'visibility'}}</mat-icon>
+          <mat-hint>Ingrese contraseña para su cuenta</mat-hint>
+        </mat-form-field>
+      </p>
 
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Seleccionar país</mat-label>
+          <mat-select formControlName="selectedCountry">
+            <mat-option *ngFor="let country of countries" [value]="country.name">{{country.name}}</mat-option>
+          </mat-select>
+          <mat-hint>Ingrese su país</mat-hint>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Ciudad</mat-label>
+          <mat-select formControlName="selectedCity">
+            <mat-option *ngFor="let city of cities" [value]="city.name">{{city.name}}</mat-option>
+          </mat-select>
+          <mat-hint>Ingrese su ciudad</mat-hint>
+        </mat-form-field>
+      </p>
 
-    <p>
-      <mat-form-field appearance="outline">
-        <mat-label>Ciudad</mat-label>
-        <input matInput placeholder="Ciudad">
-        <mat-icon [ngStyle]="{ color: 'white' }" matSuffix>sentiment_very_satisfied</mat-icon>
-        <mat-hint>Ingrese su ciudad</mat-hint>
-      </mat-form-field>
-    </p>
-    <button mat-button color="primary">Registrarme</button>
+      <button mat-button color="primary" type="submit" value="Log In">Registrarme</button>
+    </form>
   </div>
 </div>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">

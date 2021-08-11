@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { observable, Observable } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
+import { City } from './../memorandum/models/city';
 
 @Injectable({
   providedIn: 'root',
@@ -10,21 +11,22 @@ import { HttpClient } from '@angular/common/http';
 export class UserService {
   constructor(private http: HttpClient) {}
 
-  endpoint = 'http://localhost:3000/api/v1/countries/';
+  endpoint = 'http://localhost:3000/api/v1/';
 
-  /*   getMessagesDev() {
-    return this.http.get(this.endpoint);
-  } */
-
-  /* funcion 'get' memorandums con captura de error */
   getCountries(): Observable<Country[]> {
-    return this.http.get<Country[]>(this.endpoint);
-
-    /* .pipe(
-      catchError(this.handleError('getMessages', messages))
-    ); */
+    return this.http.get<Country[]>(this.endpoint + 'countries/');
   }
 
+  getCities(country): Observable<City[]> {
+    return this.http.get<City[]>(
+      this.endpoint + 'cities/?country_id=' + country
+    );
+  }
+
+  //pipe de captura de error
+  /* .pipe(
+      catchError(this.handleError('getMessages', messages))
+    ); */
   /*     tests      */
   /* ------------- */
   recibidos = [
