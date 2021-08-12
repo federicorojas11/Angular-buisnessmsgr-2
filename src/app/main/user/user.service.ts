@@ -1,3 +1,4 @@
+import { User } from './../memorandum/models/user';
 import { Country } from './../memorandum/models/country';
 import { Injectable } from '@angular/core';
 import { observable, Observable } from 'rxjs';
@@ -23,6 +24,9 @@ export class UserService {
     );
   }
 
+  logIn(user): Observable<User[]> {
+    return this.http.post<User[]>(this.endpoint + '', user);
+  }
   //pipe de captura de error
   /* .pipe(
       catchError(this.handleError('getMessages', messages))
