@@ -1,6 +1,8 @@
+import { Memorandum } from './../models/memorandum';
 import { MemorandumService } from '../memorandum.service';
 import { Component, OnInit } from '@angular/core';
 import { SentMemorandum } from '../models/sent';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-sent',
@@ -8,10 +10,19 @@ import { SentMemorandum } from '../models/sent';
   styleUrls: ['./sent.component.scss'],
 })
 export class SentComponent implements OnInit {
-  sent: SentMemorandum[] = [];
-  constructor(private _serviceMemorandum: MemorandumService) {}
+  memorandum: Memorandum[] = [];
+  formId = new FormGroup({
+    userId: new FormControl(''),
+  });
+
+  constructor(private _memorandumService: MemorandumService) {}
 
   ngOnInit(): void {
-    this.sent = this._serviceMemorandum.getEnviados();
+    this.formId.get('userId').valueChanges.subscribe((userId) => {
+      console.log(userId);
+      this._memorandumService
+        .getSentMemorandums(userId)
+        .subscribe((data: Memorandum[]) => (this.memorandum = data));
+    });
   }
 }

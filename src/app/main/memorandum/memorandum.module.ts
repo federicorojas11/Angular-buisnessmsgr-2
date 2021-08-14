@@ -5,6 +5,9 @@ import { MemorandumRoutingModule } from './memorandum-routing.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MemorandumComponent } from './memorandum.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -12,7 +15,15 @@ import { MemorandumComponent } from './memorandum.component';
     SentComponent,
     NewComponent,
     ReceivedComponent,
+    MemorandumComponent,
   ],
-  imports: [CommonModule, MemorandumRoutingModule],
+  imports: [
+    CommonModule,
+    MemorandumRoutingModule,
+    MatInputModule,
+    MatFormFieldModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
 })
 export class MemorandumModule {}

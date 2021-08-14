@@ -1,8 +1,8 @@
 import { City } from './../../memorandum/models/city';
 import { Country } from './../../memorandum/models/country';
 import { UserService } from './../user.service';
-import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-register',

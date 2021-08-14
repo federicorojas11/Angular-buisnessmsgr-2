@@ -31,9 +31,12 @@ export class MemorandumComponent implements OnInit {
   constructor(private _memorandumService: MemorandumService) {}
 
   ngOnInit(): void {
-    this.msjRecibidos = this._memorandumService.getRecibidos().length;
-    this.msjEnviados = this._memorandumService.getEnviados().length;
-    this.Recibidos = this._memorandumService.getRecibidos();
+    // this.msjRecibidos = this._memorandumService.getRecibidos().length;
+    this.msjRecibidos = 16;
+    // this.msjEnviados = this._memorandumService.getEnviados().length;
+    this.msjEnviados = 10;
+    // this.Recibidos = this._memorandumService.getRecibidos();
+    this.Recibidos = 5;
 
     /* this._memorandumService.getMessagesDev().subscribe((data) => {
       console.log(data);
