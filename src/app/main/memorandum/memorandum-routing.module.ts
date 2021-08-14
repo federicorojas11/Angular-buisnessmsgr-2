@@ -1,3 +1,4 @@
+import { NewComponent } from './new/new.component';
 import { SentComponent } from './sent/sent.component';
 import { ReceivedComponent } from './received/received.component';
 import { MemorandumComponent } from './memorandum.component';
@@ -6,6 +7,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   { path: '', component: MemorandumComponent },
+  { path: 'new', component: NewComponent },
   { path: 'sent', component: SentComponent },
   { path: 'received', component: ReceivedComponent },
 ];

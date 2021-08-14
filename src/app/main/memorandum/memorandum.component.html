@@ -2,23 +2,29 @@
   <div class="container__messages">
     <h1 class="container__messages--title">Dashboard</h1>
 
-    <div class="container__messages__container">
-      <img src="../../../assets/001-email.png" alt="received-img" width="10%">
+    <a routerLink="/memorandum/new">
+      <div class="container__messages__container">
+        <img src="../../../assets/svg/018-email-17.svg" alt="new-img" width="10%">
 
-      <h5>{{ msjRecibidos }} memorandos recibidos </h5>
-    </div>
+        <h5> Redactar nuevo memorando </h5>
+      </div>
+    </a>
 
-    <div class="container__messages__container">
-      <img src="../../../assets/014-email-13.png" alt="sent-img" width="10%">
+    <a routerLink="/memorandum/received">
+      <div class="container__messages__container">
+        <img src="../../../assets/001-email.png" alt="received-img" width="10%">
 
-      <h5>{{ msjEnviados }} memorandos enviados </h5>
-    </div>
+        <h5>{{ msjRecibidos }} memorandos recibidos </h5>
+      </div>
+    </a>
 
-    <!-- ---------------- -->
-    <!--    <p>Mensajes recibidos:</p>
-    <tr *ngFor="let mensaje of mensajes">
-      <td>{{mensaje.id}}</td>
-    </tr> -->
-    <!-- ---------------- -->
+    <a routerLink="/memorandum/sent">
+      <div class="container__messages__container">
+        <img src="../../../assets/014-email-13.png" alt="sent-img" width="10%">
+
+        <h5>{{ msjEnviados }} memorandos enviados </h5>
+      </div>
+    </a>
+
 
     <router-outlet></router-outlet>

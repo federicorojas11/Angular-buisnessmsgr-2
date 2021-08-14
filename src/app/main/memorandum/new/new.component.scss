@@ -3,19 +3,23 @@
   width: 100%;
   height: auto;
 
-  &__enviados {
+  &__new {
     margin: 5% 10% 5% 10%;
   }
 }
 
-.mensajes__container {
+.memo__container {
   background-color: rgb(212, 212, 212);
 
-  &__mensaje {
+  &__memo {
     padding: 2%;
     border: 1px solid rgb(71, 71, 71);
     background-color: rgb(193, 201, 248);
     margin-bottom: 5px;
     border-radius: 15px;
+
+    &--title {
+      font-size: 1.3em;
+    }
   }
 }
