@@ -2,13 +2,18 @@
   <div class="container__new">
     <h1 class="container__new--title">Redactar nuevo memorando</h1>
 
-
-    <p>Escriba su mensaje:</p>
+    <p class="container__new--subtitle">Escriba a continuación su mensaje:</p>
     <div class="memo__container">
       <div class="memo__container__memo">
         <p class="memo__container__memo--title">Titulo: title </p>
-        <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci molestiae impedit earum repudiandae est
-          amet
-          esse obcaecati enim autem accusamus!</p>
+
+        <form>
+          <mat-form-field appearance="fill">
+            <mat-label>Escriba aquí su mensaje:</mat-label>
+            <textarea matInput #message maxlength="256" placeholder="Buenos días..." class="mat-memorandum"></textarea>
+            <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+          </mat-form-field>
+        </form>
+
       </div>
     </div>

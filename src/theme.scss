@@ -18,17 +18,22 @@ typography: $typography
 )
 );
 
-$my-typography: mat.define-typography-config(
-  $headline:  mat.define-typography-level(24px, 32px, 400, $font-family: 'Cormorant'),
+
+$memorandum: mat.define-typography-config(
+  $headline:  mat.define-typography-level(28px, 32px, 400, $font-family: 'Cormorant'),
+  $subheading-1:  mat-typography-level(15px, 24px, 400, $font-family: 'Cormorant'),
+  $title:  mat.define-typography-level(24px, 28px, 300, $font-family: 'Cormorant'),
+  $body-1:  mat.define-typography-level(24px, 32px, 400, $font-family: 'Quattrocento'),
+  $body-2:  mat.define-typography-level(24px, 32px,600, $font-family: 'Mukta Vaani'),
+
   );
 
 
-  @include mat.core($my-typography);
+  @include mat.core($memorandum);
   @include mat.all-component-themes($my-theme);
 
 
-  // Use the default configuration.
-
 h1 {
-  @include mat.typography-level($my-typography, 'headline');
+  @include mat.typography-level($memorandum, 'headline');
 }
+

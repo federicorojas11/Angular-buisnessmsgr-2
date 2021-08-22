@@ -2,13 +2,15 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { UserComponent } from './user.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '',
+    //redirectTo: '',
+    component: UserComponent,
   },
-  { 
+  {
     path: 'login',
     component: LoginComponent,
   },

@@ -1,3 +1,8 @@
+@import "~@angular/material/theming";
+@import "../../../../theme.scss";
+@include mat-core();
+@include angular-material-typography($memorandum);
+
 .container {
   display: flex;
   width: 100%;
@@ -5,6 +10,18 @@
 
   &__new {
     margin: 5% 10% 5% 10%;
+  width: 100%;
+
+  &--title{
+    font-size: mat-font-size($memorandum, 'title');
+    font-family: mat-font-family($memorandum, 'title');
+    line-height: mat-line-height($memorandum, 'title');
+  }
+  &--subtitle{
+    font-size: mat-font-size($memorandum, 'subheading-1');
+    font-family: mat-font-family($memorandum, 'subheading-1');
+    line-height: mat-line-height($memorandum, 'subheading-1');
+  }
   }
 }
 
@@ -13,7 +30,7 @@
 
   &__memo {
     padding: 2%;
-    border: 1px solid rgb(71, 71, 71);
+    border: 1px solid rgb(173, 165, 165);
     background-color: rgb(193, 201, 248);
     margin-bottom: 5px;
     border-radius: 15px;
@@ -23,6 +40,11 @@
       font-size: 1.3em;
       color: var(--primary-color);
 
+    }
+
+    & form{
+      font-size: mat-font-size($memorandum, 'body-1');
+      font-family: mat-font-family($memorandum, 'body-1');
     }
   }
 }
