@@ -13,8 +13,8 @@ export class LoginComponent implements OnInit {
   hide = true;
   color = 'grey';
   form = new FormGroup({
-    user: new FormControl('', Validators.required),
-    password: new FormControl('', Validators.required),
+    user: new FormControl(''),
+    password: new FormControl(''),
   });
 
   constructor(private _userService: UserService) {}
