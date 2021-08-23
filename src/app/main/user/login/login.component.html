@@ -9,21 +9,27 @@
       <p>
         <mat-form-field appearance="outline">
           <mat-label>Usuario</mat-label>
-          <input matInput placeholder="Nombre de usuario" formControlName="user">
+          <input matInput
+          placeholder="Nombre de usuario"
+          formControlName="user">
           <mat-icon [ngStyle]="{ color: 'white' }" matSuffix>sentiment_very_satisfied</mat-icon>
-          <mat-hint>Ingrese su usuario</mat-hint>
+          <mat-hint>Nombre de usuario</mat-hint>
+          <mat-error *ngIf="form.controls.user.invalid && submitted">Debe ingresar su nombre de usuario'</mat-error>
         </mat-form-field>
-      </p>
+
 
       <p>
         <mat-form-field appearance="outline">
           <mat-label>Contraseña</mat-label>
-          <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'" formControlName="password">
-          <mat-icon [ngStyle]="{ color: color }" matSuffix (click)="hide = !hide">
+          <input matInput placeholder="Password"
+          [type]="hide ? 'password' : 'text'"
+          formControlName="password">
+         <mat-icon [ngStyle]="{ color: color }" matSuffix (click)="hide = !hide">
             {{hide?
             'visibility_off' :
             'visibility'}}</mat-icon>
-          <mat-hint>Ingrese su contraseña</mat-hint>
+          <mat-hint>Password</mat-hint>
+          <mat-error *ngIf="form.controls.password.invalid && submitted">La contraseña es requerida</mat-error>
         </mat-form-field>
       </p>
 

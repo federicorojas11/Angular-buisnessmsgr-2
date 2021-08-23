@@ -18,7 +18,7 @@ export class UserService {
     return this.http.get<Country[]>(this.endpoint + 'countries');
   }
 
-  getCities(country:Country): Observable<City[]> {
+  getCities(country:number): Observable<City[]> {
     return this.http.get<City[]>(
       this.endpoint + 'cities/?country_id=' + country
     );

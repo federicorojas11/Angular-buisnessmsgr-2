@@ -22,7 +22,7 @@ export class RegisterComponent implements OnInit {
     password: new FormControl('', Validators.required),
     selectedCountry: new FormControl('', Validators.required),
     selectedCity: new FormControl('', Validators.required),
-  });
+  }, {updateOn:'submit'});
 
   constructor(private _userService: UserService) {}
 
