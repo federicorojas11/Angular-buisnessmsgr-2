@@ -24,4 +24,16 @@ export class MemorandumService {
       this.baseEndpoint + 'sent/?senderId=' + id
     );
   }
+sendMemorandum(memorandum: Memorandum){
+  return this.http.post(this.baseEndpoint+ 'new/send', memorandum);
+}
+
+deleteMemorandum(memorandum: Memorandum){
+  return this.http.patch(this.baseEndpoint+ 'new/delete', memorandum);
+}
+
+
+
+
+
 }
