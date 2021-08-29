@@ -1,9 +1,9 @@
 export interface User {
   id: number;
-  name: string;
-  lastname: string;
-  username: string;
+  firstName: string;
+  lastName: string;
+  userName: string;
   password: string;
-  country_id: string;
-  city_id: string;
+  country: string;
+  city: string;
 }

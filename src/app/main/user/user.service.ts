@@ -29,7 +29,7 @@ export class UserService {
   }
 
   register(user:User):Observable<User>{
-    return this.http.post<User>(this.endpoint + 'register', user);
+    return this.http.post<User>(this.endpoint + 'users', user);
   }
 
 }

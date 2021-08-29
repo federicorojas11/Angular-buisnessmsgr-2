@@ -3,6 +3,7 @@ import { Country } from './../../memorandum/models/country';
 import { UserService } from './../user.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+import { User } from '../../memorandum/models/user';
 
 @Component({
   selector: 'app-register',
@@ -15,14 +16,15 @@ export class RegisterComponent implements OnInit {
   countryId = 0;
   hide = true;
   color = 'grey';
+  registered:User;
   form = new FormGroup({
-    name: new FormControl('', Validators.required),
-    lastname: new FormControl('', Validators.minLength(8)),
-    user: new FormControl('', Validators.required),
+    firstName: new FormControl('', Validators.required),
+    lastName: new FormControl('', Validators.minLength(8)),
+    userName: new FormControl('', Validators.required),
     password: new FormControl('', Validators.required),
-    selectedCountry: new FormControl('', Validators.required),
-    selectedCity: new FormControl('', Validators.required),
-  }, {updateOn:'submit'});
+    city: new FormControl('', Validators.required),
+    country: new FormControl('', Validators.required),
+  }, {updateOn:'blur'});
 
   constructor(private _userService: UserService) {}
 
@@ -31,7 +33,7 @@ export class RegisterComponent implements OnInit {
     this._userService.getCountries().subscribe((e) => (this.countries = e));
 
     // Busqueda de ciudades de ese país
-    this.form.get('selectedCountry').valueChanges.subscribe((country) => {
+    this.form.get('country').valueChanges.subscribe((country) => {
       this.countryId = this.findCountryId(country);
       this._userService
         .getCities(this.countryId)
@@ -57,7 +59,11 @@ export class RegisterComponent implements OnInit {
     return country_id;
   }
 
-  onSubmit(form): void {
-    console.log(this.form.value);
+  registerNewUser(user: User) {
+    console.log(user);
+    this._userService.register(user).subscribe(e => {
+      this.registered = e;
+      // console.log(this.registered.firstName);
+    });
   }
 }

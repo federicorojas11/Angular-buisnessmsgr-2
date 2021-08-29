@@ -3,11 +3,11 @@
 
     <h1>Registro</h1>
 
-    <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+    <form [formGroup]="form" (ngSubmit)="registerNewUser(form.value)">
       <p>
         <mat-form-field appearance="outline">
           <mat-label>Nombre</mat-label>
-          <input matInput placeholder="Nombre" formControlName="name">
+          <input matInput placeholder="Nombre" formControlName="firstName">
           <mat-icon [ngStyle]="{ color: 'white' }" matSuffix>sentiment_very_satisfied</mat-icon>
           <mat-hint>Ingrese su nombre</mat-hint>
         </mat-form-field>
@@ -15,7 +15,7 @@
       <p>
         <mat-form-field appearance="outline">
           <mat-label>Apellido</mat-label>
-          <input matInput placeholder="Apellido" formControlName="lastname">
+          <input matInput placeholder="Apellido" formControlName="lastName">
           <mat-icon [ngStyle]="{ color: 'white' }" matSuffix>sentiment_very_satisfied</mat-icon>
           <mat-hint>Ingrese su apellido</mat-hint>
         </mat-form-field>
@@ -23,7 +23,7 @@
       <p>
         <mat-form-field appearance="outline">
           <mat-label>Usuario</mat-label>
-          <input matInput placeholder="Nombre de usuario" formControlName="user">
+          <input matInput placeholder="Nombre de usuario" formControlName="userName">
           <mat-icon [ngStyle]="{ color: 'white' }" matSuffix>sentiment_very_satisfied</mat-icon>
           <mat-hint>Ingrese un nuevo nombre de usuario</mat-hint>
         </mat-form-field>
@@ -43,7 +43,7 @@
       <p>
         <mat-form-field appearance="outline">
           <mat-label>Seleccionar país</mat-label>
-          <mat-select formControlName="selectedCountry">
+          <mat-select formControlName="country">
             <mat-option *ngFor="let country of countries" [value]="country.name">{{country.name}}</mat-option>
           </mat-select>
           <mat-hint>Ingrese su país</mat-hint>
@@ -52,7 +52,7 @@
       <p>
         <mat-form-field appearance="outline">
           <mat-label>Ciudad</mat-label>
-          <mat-select formControlName="selectedCity">
+          <mat-select formControlName="city">
             <mat-option *ngFor="let city of cities" [value]="city.name">{{city.name}}</mat-option>
           </mat-select>
           <mat-hint>Ingrese su ciudad</mat-hint>
