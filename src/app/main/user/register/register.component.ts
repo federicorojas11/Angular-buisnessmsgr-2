@@ -4,6 +4,8 @@ import { UserService } from './../user.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { User } from '../../memorandum/models/user';
+import {Router} from '@angular/router';
+
 
 @Component({
   selector: 'app-register',
@@ -17,6 +19,7 @@ export class RegisterComponent implements OnInit {
   hide = true;
   color = 'grey';
   registered:User;
+
   form = new FormGroup({
     firstName: new FormControl('', Validators.required),
     lastName: new FormControl('', Validators.minLength(8)),
@@ -26,7 +29,7 @@ export class RegisterComponent implements OnInit {
     country: new FormControl('', Validators.required),
   }, {updateOn:'blur'});
 
-  constructor(private _userService: UserService) {}
+  constructor(private _userService: UserService, private router: Router) {}
 
   ngOnInit(): void {
     //  Traigo paises al front desde db
@@ -45,6 +48,7 @@ export class RegisterComponent implements OnInit {
         this.color = 'grey';
       } else this.color = 'black';
     });
+
   }
 
   // Retorna el id del pais recibido por parametro
@@ -60,10 +64,10 @@ export class RegisterComponent implements OnInit {
   }
 
   registerNewUser(user: User) {
-    console.log(user);
     this._userService.register(user).subscribe(e => {
       this.registered = e;
-      // console.log(this.registered.firstName);
+      console.log(this.registered);
+      this.router.navigate(['/user/login'], {state:this.registered});
     });
   }
 }

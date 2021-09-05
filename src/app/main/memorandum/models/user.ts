@@ -6,4 +6,7 @@ export interface User {
   password: string;
   country: string;
   city: string;
+  token: string;
 }
+
+

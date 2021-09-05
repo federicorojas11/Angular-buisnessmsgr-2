@@ -1,8 +1,7 @@
 import { User } from './../memorandum/models/user';
 import { Country } from './../memorandum/models/country';
 import { Injectable } from '@angular/core';
-import { observable, Observable } from 'rxjs';
-import { catchError, retry } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { City } from './../memorandum/models/city';
 
@@ -10,9 +9,25 @@ import { City } from './../memorandum/models/city';
   providedIn: 'root',
 })
 export class UserService {
+
+ currentUser:User;
+ session = {token : ''};
+
   constructor(private http: HttpClient) {}
 
   endpoint = 'http://localhost:3000/api/v1/';
+
+  declareUser(user:User){
+    this.currentUser = user;
+  }
+
+  logIn(user:User): Observable<User> {
+    return this.http.post<User>(this.endpoint + 'auth/login', user);
+  }
+
+  register(user:User):Observable<User>{
+    return this.http.post<User>(this.endpoint + 'users', user);
+  }
 
   getCountries(): Observable<Country[]> {
     return this.http.get<Country[]>(this.endpoint + 'countries');
@@ -24,12 +39,8 @@ export class UserService {
     );
   }
 
-  logIn(user:User): Observable<User> {
-    return this.http.post<User>(this.endpoint + 'login', user);
-  }
-
-  register(user:User):Observable<User>{
-    return this.http.post<User>(this.endpoint + 'users', user);
+  asignToken(token: string): void{
+    this.session.token = token;
   }
 
 }

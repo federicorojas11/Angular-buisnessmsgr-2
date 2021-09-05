@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { User } from './../../memorandum/models/user';
 import { Component, OnInit } from '@angular/core';
 import { UserService } from './../user.service';
@@ -14,7 +13,7 @@ export class LoginComponent implements OnInit {
   hide = true;
   color = 'grey';
   form = new FormGroup({
-    user: new FormControl('', Validators.required),
+    userName: new FormControl('', Validators.required),
     password: new FormControl('',Validators.required),
   } , {updateOn:'blur'});
   submitted = false;
@@ -37,8 +36,13 @@ export class LoginComponent implements OnInit {
     if (this.form.invalid) {
       return;
     }
-    this._userService.logIn(user);
-    console.log('post');
+    this._userService.logIn(user).subscribe(( loggedUser ) => {
+      this._userService.asignToken(loggedUser.token);
+      console.log(loggedUser.userName)
+      console.log(loggedUser.password)
+      console.log(loggedUser.token)
+      console.log(this._userService.session.token)
+    });
   }
 
   getErrorMessage(message:string) {

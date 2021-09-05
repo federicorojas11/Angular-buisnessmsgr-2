@@ -18,11 +18,6 @@ export class SentComponent implements OnInit {
   constructor(private _memorandumService: MemorandumService) {}
 
   ngOnInit(): void {
-    this.formId.get('userId').valueChanges.subscribe((userId) => {
-      console.log(userId);
-      this._memorandumService
-        .getSentMemorandums(userId)
-        .subscribe((data: Memorandum[]) => (this.memorandum = data));
-    });
+
   }
 }

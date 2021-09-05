@@ -11,10 +11,10 @@
           <mat-label>Usuario</mat-label>
           <input matInput
           placeholder="Nombre de usuario"
-          formControlName="user">
+          formControlName="userName">
           <mat-icon [ngStyle]="{ color: 'white' }" matSuffix>sentiment_very_satisfied</mat-icon>
           <mat-hint>Nombre de usuario</mat-hint>
-          <mat-error *ngIf="form.controls.user.invalid && submitted">Debe ingresar su nombre de usuario'</mat-error>
+          <mat-error *ngIf="form.controls.userName.invalid && submitted">Debe ingresar su nombre de usuario'</mat-error>
         </mat-form-field>
 
 

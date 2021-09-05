@@ -5,19 +5,6 @@
     <h5> {{ CountReaded() }} nuevos memorandos no leidos </h5>
 
 
-    <form [formGroup]="formId">
-      <p>(DEV)-&gt; id del receptor &lt;- </p>
-      <p>
-        <mat-form-field appearance="outline">
-          <mat-label>Id del 1 al 15</mat-label>
-          <input matInput placeholder="Id del usuario" formControlName="userId">
-          <mat-icon [ngStyle]="{ color: 'white' }"></mat-icon>
-          <mat-hint>Id del usuario</mat-hint>
-        </mat-form-field>
-      </p>
-    </form>
-
-
     <p>Memorandos recibidos:</p>
     <div class="mensaje__container">
       <div *ngFor="let message of memorandum" class="mensajes__container__mensaje">

@@ -17,12 +17,7 @@ export class ReceivedComponent implements OnInit {
   constructor(private _memorandumService: MemorandumService) {}
 
   ngOnInit(): void {
-    this.formId.get('userId').valueChanges.subscribe((userId) => {
-      console.log(userId);
-      this._memorandumService
-        .getMemorandums(userId)
-        .subscribe((data: Memorandum[]) => (this.memorandum = data));
-    });
+
   }
 
   CountReaded() {
