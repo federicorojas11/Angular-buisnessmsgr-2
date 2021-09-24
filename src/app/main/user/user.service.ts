@@ -11,7 +11,7 @@ import { City } from './../memorandum/models/city';
 export class UserService {
 
  currentUser:User;
- session = {token : ''};
+ token = '';
 
   constructor(private http: HttpClient) {}
 
@@ -40,7 +40,7 @@ export class UserService {
   }
 
   asignToken(token: string): void{
-    this.session.token = token;
+    localStorage.setItem('token', token) ;
   }
 
 }

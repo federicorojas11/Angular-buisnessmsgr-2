@@ -18,6 +18,7 @@ export class SentComponent implements OnInit {
   constructor(private _memorandumService: MemorandumService) {}
 
   ngOnInit(): void {
+    this._memorandumService.getSent().subscribe((e) => (this.memorandum = e));
 
   }
 }

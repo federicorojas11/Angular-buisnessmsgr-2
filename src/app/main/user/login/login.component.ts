@@ -2,6 +2,7 @@ import { User } from './../../memorandum/models/user';
 import { Component, OnInit } from '@angular/core';
 import { UserService } from './../user.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -19,7 +20,7 @@ export class LoginComponent implements OnInit {
   submitted = false;
 
 
-  constructor(private _userService: UserService) {}
+  constructor(private _userService: UserService, private router: Router) {}
 
   ngOnInit(): void {
 
@@ -38,11 +39,10 @@ export class LoginComponent implements OnInit {
     }
     this._userService.logIn(user).subscribe(( loggedUser ) => {
       this._userService.asignToken(loggedUser.token);
-      console.log(loggedUser.userName)
-      console.log(loggedUser.password)
-      console.log(loggedUser.token)
-      console.log(this._userService.session.token)
     });
+    console.log('Token en user component: ' + localStorage.getItem('token'));
+
+    this.router.navigate(['/memorandum/received']);
   }
 
   getErrorMessage(message:string) {

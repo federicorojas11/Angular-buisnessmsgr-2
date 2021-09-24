@@ -1,44 +1,38 @@
 import { Memorandum } from './models/memorandum';
 import { User } from './models/user';
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { UserService } from '../user/user.service';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class MemorandumService {
 
-  private userSession:User = {
-    userName:'',
-    firstName: '',
-    id: 0,
-    lastName:'',
-    password:'',
-    country:'',
-    city:'',
-    token:''
-  }
-
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private _userService: UserService) {}
 
   baseEndpoint = 'http://localhost:3000/api/v1/memorandum/';
+  headers = new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token'));
 
-  declareUser(user: User):void{
-    this.userSession = user;
-  }
+
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type':  'application/json',
+      Authorization: 'Bearer ' + localStorage.getItem('token'),
+    })
+  };
 
   //Mostrar memorandos recibidos por el usuario
-  getReceived(id:number) {
-    return this.http.get<Memorandum[]>(
-      this.baseEndpoint + 'received/?receiverId=' + id
-    );
-  }
+  getReceived() {
+       return this.http.get<Memorandum[]>(
+      this.baseEndpoint+ 'received', this.httpOptions);
+    }
 
   //Mostrar memorandos enviados por el usuario
-  getSent(id:number) {
+  getSent() {
     return this.http.get<Memorandum[]>(
-      this.baseEndpoint + 'sent/?senderId=' + id
-    );
+      this.baseEndpoint + 'sent', this.httpOptions);
   }
 
   //Eliminar un memorando

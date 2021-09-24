@@ -2,6 +2,7 @@ import { Memorandum } from './../models/memorandum';
 import { MemorandumService } from '../memorandum.service';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { UserService } from '../../user/user.service';
 
 @Component({
   selector: 'app-received',
@@ -14,10 +15,10 @@ export class ReceivedComponent implements OnInit {
     userId: new FormControl(''),
   });
   readed = this.CountReaded();
-  constructor(private _memorandumService: MemorandumService) {}
+  constructor(private _memorandumService: MemorandumService, private _userService: UserService) {}
 
   ngOnInit(): void {
-
+    this._memorandumService.getReceived().subscribe((e) => (this.memorandum = e));
   }
 
   CountReaded() {
