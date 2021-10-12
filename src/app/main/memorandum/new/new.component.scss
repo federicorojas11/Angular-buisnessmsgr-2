@@ -4,15 +4,14 @@
 @include angular-material-typography($memorandum);
 
 .container {
-  display: flex;
+   display: flex;
   width: 100%;
   height: auto;
-  padding: 2%;
 
   &__new {
-    margin: 5% 10% 5% 10%;
+     margin: 1% 10% 5% 10%;
 
-    width: 100%;
+     width: 100%;
 
   &--title{
     font-size: mat-font-size($memorandum, 'title');
@@ -29,21 +28,33 @@
 
 .memo__container {
   background-color: rgb(212, 212, 212);
-  margin: 0 -11% 0 -11%;
-  padding: -2%;
-
 
   &__memo {
     padding: 2%;
-    margin: 5% 9% 5% 9%;
+    margin: 3% 9% 5% 2%;
     border: 1px solid rgb(173, 165, 165);
     background-color: rgb(193, 201, 248);
     margin-bottom: 5px;
     border-radius: 3px;
 
 
-    &--title {
+    &--options {
+      display: flex;
+      flex-direction: row;
+      gap: 5%;
       font-size: 1.3em;
+      font-family: mat-font-family($memorandum, 'headline');
+
+    }
+
+    &--topic{
+      padding: 1%;
+      font-size: 0.7em;
+      font-family: mat-font-family($memorandum, 'title');
+    }
+
+    &--message{
+      font-family: mat-font-family($memorandum, 'body-2');
     }
 
     & form{
@@ -57,3 +68,4 @@
     }
   }
 }
+

@@ -4,7 +4,7 @@ import { UserService } from './../user.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { User } from '../../memorandum/models/user';
-import {Router} from '@angular/router';
+import { Router } from '@angular/router';
 
 
 @Component({
