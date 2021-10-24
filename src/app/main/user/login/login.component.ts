@@ -40,9 +40,8 @@ export class LoginComponent implements OnInit {
     this._userService.logIn(user).subscribe(( loggedUser ) => {
       this._userService.asignToken(loggedUser.token);
     });
-    console.log('Token en user component: ' + localStorage.getItem('token'));
 
-    this.router.navigate(['/memorandum/received']);
+    this.router.navigate(['/memorandum']);
   }
 
   getErrorMessage(message:string) {

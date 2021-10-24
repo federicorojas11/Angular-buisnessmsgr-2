@@ -1,36 +1,45 @@
 <div class="memo__container">
 
-<div class="container">
-  <div class="container__new">
-    <h1 class="container__new--title">Redactar nuevo memorando</h1>
-    <p class="container__new--subtitle">Escriba a continuación su mensaje:</p>
+  <div class="container">
+    <div class="container__new">
+      <h1 class="container__new--title">Redactar nuevo memorando</h1>
+      <p class="container__new--subtitle">Escriba a continuación su mensaje:</p>
 
 
       <section class="memo__container__memo">
 
-        <form [formGroup]="form" (ngSubmit)="(form.value)">
-        <div class="memo__container__memo--options">
+        <form [formGroup]="form">
+          <div class="memo__container__memo--options">
 
-            <p> Asunto:
+            <p class="mat-form"> Asunto:
               <mat-form-field appearance="outline" class="memo__container__memo--topic">
                 <input matInput formControlName="asunto">
               </mat-form-field>
             </p>
 
-            <p style="margin-left: 4%;"> Destinatario:
-                <mat-form-field appearance="outline" class="memo__container__memo--topic">
-                  <input matInput formControlName="destinatario">
-                </mat-form-field>
-              </p>
-        </div>
+            <p class="mat-form"> Destinatario:
+              <mat-form-field class="memo__container__memo--topic" appearance="fill">
+                <mat-label>Usuario</mat-label>
+                <input type="text" matInput [formControl]="destinatario" [matAutocomplete]="auto">
+                <mat-error *ngIf="destinatario.invalid">Debe ingresar un usuario </mat-error>
+                <mat-autocomplete #auto="matAutocomplete">
+                  <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                    {{option}}
+                  </mat-option>
+                </mat-autocomplete>
+              </mat-form-field>
+            </p>
+          </div>
 
           <mat-form-field appearance="fill">
             <mat-label>Escriba aquí su mensaje:</mat-label>
-            <textarea matInput formControlName="mensaje" #message maxlength="256" placeholder="Buenos días..." class="memo__container__memo--message"></textarea>
+            <textarea matInput formControlName="mensaje" #message maxlength="256" placeholder="Buenos días..."
+              class="memo__container__memo--message"></textarea>
             <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
           </mat-form-field>
 
-          <button mat-button color="primary" type="submit" value="Send">Enviar</button>
+          <button class="boton" (click)="openDialog()" mat-button color="primary" type="submit"
+            value="Send">Enviar</button>
         </form>
 
       </section>

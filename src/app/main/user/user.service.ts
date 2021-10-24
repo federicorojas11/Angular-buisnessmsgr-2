@@ -2,8 +2,9 @@ import { User } from './../memorandum/models/user';
 import { Country } from './../memorandum/models/country';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { City } from './../memorandum/models/city';
+
 
 @Injectable({
   providedIn: 'root',
@@ -12,6 +13,14 @@ export class UserService {
 
  currentUser:User;
  token = '';
+
+ httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type':  'application/json',
+    Authorization: 'Bearer ' + localStorage.getItem('token'),
+  })
+};
+
 
   constructor(private http: HttpClient) {}
 
@@ -29,6 +38,11 @@ export class UserService {
     return this.http.post<User>(this.endpoint + 'users', user);
   }
 
+  getUsers(): Observable<User[]>{
+    return this.http.get<User[]>(this.endpoint + 'users', this.httpOptions);
+  }
+
+
   getCountries(): Observable<Country[]> {
     return this.http.get<Country[]>(this.endpoint + 'countries');
   }
@@ -44,8 +58,3 @@ export class UserService {
   }
 
 }
-
-  //pipe de captura de error
-  /* .pipe(
-      catchError(this.handleError('getMessages', messages))
-    ); */

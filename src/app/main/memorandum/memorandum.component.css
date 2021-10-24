@@ -1,0 +1,31 @@
+body h1 {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.container {
+  height: auto;
+  display: flex;
+}
+.container__messages {
+  margin: 5%;
+  width: 100%;
+  min-width: 100%;
+}
+.container__messages--title {
+  text-shadow: blue 1px 2px 5px;
+  font-size: 2.2rem;
+}
+.container__messages__container {
+  border: 1px solid #747474;
+  display: flex;
+  padding: 1rem 2rem 1rem 2rem;
+  margin-bottom: 0.5rem;
+  width: 80%;
+  min-width: 80%;
+  background: linear-gradient(red, blue);
+}
+.container__messages__container h5 {
+  margin: 20px 0 0 20px;
+  font-size: 2rem;
+  color: #fdfd6c;
+}

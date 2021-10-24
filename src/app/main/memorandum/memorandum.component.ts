@@ -1,7 +1,6 @@
 import { MemorandumService } from './memorandum.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { User } from './models/user';
 
 @Component({
   selector: 'app-memorandum',
@@ -9,16 +8,13 @@ import { User } from './models/user';
   styleUrls: ['./memorandum.component.scss'],
 })
 export class MemorandumComponent implements OnInit {
-  receivedMemos = 0;
-  sentMemos = 0;
+  countReceived = 0;
+  countSent = 0;
 
   constructor(private _memorandumService: MemorandumService, private router: Router) {}
 
   ngOnInit(): void {
-    //  this.msjRecibidos = this._memorandumService.getReceived().length;
-    //  this.msjEnviados = this._memorandumService.getSent().length;
-
-
-
+    this._memorandumService.getReceived().subscribe((e) => (this.countReceived = e.length));
+    this._memorandumService.getSent().subscribe((e) => (this.countSent = e.length));
   }
 }

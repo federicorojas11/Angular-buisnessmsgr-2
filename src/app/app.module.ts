@@ -15,10 +15,12 @@ import { MatButtonModule } from '@angular/material/button';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
+import { ConfirmDialogComponent } from './main/memorandum/new/confirm-dialog-component/confirm-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, HeaderComponent, FooterComponent],
+  declarations: [AppComponent, HomeComponent, HeaderComponent, FooterComponent, ConfirmDialogComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -33,6 +35,7 @@ import { MatIconModule } from '@angular/material/icon';
     BrowserAnimationsModule,
     HttpClientModule,
     MatIconModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent],

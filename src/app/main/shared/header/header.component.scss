@@ -17,10 +17,19 @@ mat-toolbar {
     &:before {
       visibility: visible;
       content: "Buisness MSGR";
-      font-size: 3rem;
       padding-left: 1.5rem;
       color: rgb(226, 226, 226);
       text-shadow: rgba(139, 140, 228, 0.966) 2px 3px 11px;
+    }
+
+    @media (max-width: 1992px) {
+      font-size: 2.5rem;
+    }
+    @media (max-width: 768px) {
+      font-size: 2.2rem;
+    }
+    @media (max-width: 576px) {
+      font-size: 1.5rem;
     }
   }
 
