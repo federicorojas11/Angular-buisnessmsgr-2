@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="container__recibidos">
+    <h1 class="container__recibidos--title">Memorandos recibidos</h1>
+
+    <h5> {{ CountReaded() }} nuevos memorandos no leidos </h5>
+
+
+    <p>Memorandos recibidos:</p>
+    <div class="mensaje__container">
+      <div *ngFor="let message of memorandum" class="mensajes__container__mensaje">
+        <p><b>{{message.sender_id}}</b></p>
+        <p>{{message.time | date:'medium'}}</p>
+        <p>{{message.title}}</p>
+        <p>{{message.message}}</p>
+      </div>
+    </div>

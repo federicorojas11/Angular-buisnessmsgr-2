@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  width: 100%;
+  height: auto;
+}
+.container__enviados {
+  margin: 5% 10% 5% 10%;
+}
+
+.mensajes__container {
+  background-color: #d4d4d4;
+}
+.mensajes__container__mensaje {
+  padding: 2%;
+  border: 1px solid #474747;
+  background-color: #c1c9f8;
+  margin-bottom: 5px;
+  border-radius: 15px;
+}

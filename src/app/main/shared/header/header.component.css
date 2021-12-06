@@ -1,0 +1,48 @@
+.nav-links {
+  padding-right: 1em;
+  margin-right: 2em;
+}
+.nav-links a {
+  margin-right: 8%;
+}
+
+mat-toolbar {
+  border-bottom: 3px solid rgba(255, 255, 255, 0.507);
+  background: linear-gradient(#0c0520, #020142);
+  width: 100% !important;
+}
+mat-toolbar .title {
+  visibility: hidden;
+}
+mat-toolbar .title:before {
+  visibility: visible;
+  content: "Buisness MSGR";
+  padding-left: 1.5rem;
+  color: #e2e2e2;
+  text-shadow: rgba(139, 140, 228, 0.966) 2px 3px 11px;
+}
+@media (max-width: 1992px) {
+  mat-toolbar .title {
+    font-size: 2.5rem;
+  }
+}
+@media (max-width: 768px) {
+  mat-toolbar .title {
+    font-size: 2.2rem;
+  }
+}
+@media (max-width: 576px) {
+  mat-toolbar .title {
+    font-size: 1.5rem;
+  }
+}
+mat-toolbar img {
+  height: 75px;
+  filter: drop-shadow(0.13rem 0.35rem 0.4rem #8ba8a8) contrast(175%) brightness(95%);
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  pointer-events: none;
+}

@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="container__enviados">
+    <h1 class="container__enviados--title">Memorandos enviados</h1>
+
+
+
+
+    <p>Memorandos enviados:</p>
+    <div class="mensaje__container">
+      <div *ngFor="let memorandum of memorandum" class="mensajes__container__mensaje">
+        <p><b>{{memorandum.receiver_id}}</b></p>
+        <p>{{memorandum.time | date:'medium'}}</p>
+        <p>{{memorandum.title}}</p>
+        <p>{{memorandum.message}}</p>
+      </div>
+    </div>

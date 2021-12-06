@@ -1,0 +1,95 @@
+.home {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  opacity: 0.67;
+}
+.home__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5% 0 5% 0;
+  background-color: rgba(195, 232, 236, 0.616);
+  -webkit-animation: bubble 3s forwards;
+          animation: bubble 3s forwards;
+  -webkit-animation-name: background;
+          animation-name: background;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+}
+.home__container__select {
+  width: 35%;
+  text-align: center;
+  min-width: 350px;
+  max-height: 350px;
+  margin: 2%;
+  padding: 10px;
+  border: 2px solid rgba(50, 36, 74, 0.338);
+  background-color: rgba(240, 198, 198, 0.959);
+  opacity: 0.8;
+  transition: 300ms;
+}
+@media (max-width: 992px) {
+  .home__container__select {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 2em;
+    width: 70%;
+    height: 7em;
+  }
+  .home__container__select img {
+    width: 140px;
+  }
+  .home__container__select h3 {
+    font-size: 2.2em !important;
+    margin-left: 0.4em;
+  }
+}
+@media (max-width: 576px) {
+  .home__container__select {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 2em;
+    width: 70%;
+    height: 4em;
+  }
+  .home__container__select img {
+    width: 70px;
+  }
+  .home__container__select h3 {
+    font-size: 2em !important;
+    margin-left: 0.4em;
+  }
+}
+.home__container__select:hover {
+  opacity: 1;
+  border: 2px solid rgba(48, 48, 48, 0.692);
+  background-color: rgba(235, 151, 151, 0.959);
+}
+.home__container__select h3 {
+  font-size: 2.5rem;
+  text-decoration: none;
+}
+.home__container__select img {
+  max-width: 70%;
+}
+
+@-webkit-keyframes background {
+  0% {
+    background-color: rgba(255, 255, 255, 0.479);
+    left: 0px;
+    top: 0px;
+  }
+}
+
+@keyframes background {
+  0% {
+    background-color: rgba(255, 255, 255, 0.479);
+    left: 0px;
+    top: 0px;
+  }
+}
