@@ -1,40 +1,52 @@
 <div class="container">
-  <img src="../../../assets/enter.png" class="imglog" alt="enter">
+  <img src="../../../assets/enter.png" class="imglog" alt="enter" />
   <h1>Ingresar a mi cuenta</h1>
 
-  <div class="container__form">
-
+  <div class="container__form text-center">
     <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
-
       <p>
         <mat-form-field appearance="outline">
           <mat-label>Usuario</mat-label>
-          <input matInput
-          placeholder="Nombre de usuario"
-          formControlName="userName">
-          <mat-icon [ngStyle]="{ color: 'white' }" matSuffix>sentiment_very_satisfied</mat-icon>
+          <input
+            matInput
+            placeholder="Nombre de usuario"
+            formControlName="userName"
+          />
+          <mat-icon [ngStyle]="{ color: 'grey' }" matSuffix
+            >account_circle</mat-icon
+          >
           <mat-hint>Nombre de usuario</mat-hint>
-          <mat-error *ngIf="form.controls.userName.invalid && submitted">Debe ingresar su nombre de usuario'</mat-error>
-        </mat-form-field>
-
-
-      <p><!-- fixme matInput hide  -->
-        <mat-form-field appearance="outline">
-          <mat-label>Contraseña</mat-label>
-          <input matInput placeholder="Password"
-          [type]="hide ? 'password' : 'text'"
-          formControlName="password">
-         <mat-icon [ngStyle]="{ color: color }" matSuffix (click)="hide = !hide">
-            {{hide?
-            'visibility_off' :
-            'visibility'}}</mat-icon>
-          <mat-hint>Password</mat-hint>
-          <mat-error *ngIf="form.controls.password.invalid && submitted">La contraseña es requerida</mat-error>
+          <mat-error *ngIf="form.controls.userName.invalid && submitted"
+            >Debe ingresar su nombre de usuario'</mat-error
+          >
         </mat-form-field>
       </p>
 
-      <button mat-button color="primary">Ingresar </button>
-    </form>
+      <p>
+        <!-- fixme matInput hide  -->
+        <mat-form-field appearance="outline">
+          <mat-label>Contraseña</mat-label>
+          <input
+            matInput
+            placeholder="Password"
+            [type]="hide ? 'password' : 'text'"
+            formControlName="password"
+          />
+          <mat-icon
+            [ngStyle]="{ color: color }"
+            matSuffix
+            (click)="hide = !hide"
+          >
+            {{ hide ? "visibility_off" : "visibility" }}</mat-icon
+          >
+          <mat-hint>Password</mat-hint>
+          <mat-error *ngIf="form.controls.password.invalid && submitted"
+            >La contraseña es requerida</mat-error
+          >
+        </mat-form-field>
+      </p>
 
+      <button mat-raised-button class="btn-ingresar">Ingresar</button>
+    </form>
   </div>
 </div>

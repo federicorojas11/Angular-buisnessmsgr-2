@@ -1,16 +1,44 @@
-<div class="home__container">
-  <div class="home container ">
-
-    <a routerLink="/user/login" class="home__container__select login" id="login">
-      <img src="../../../assets/log-in.png" alt="Log in" class="img">
-      <h3>Login</h3>
-    </a>
-
-
-    <a routerLink="/user/register" class="home__container__select register" id="register">
-      <img src="../../../assets/register.png" alt="Register" class="img">
-      <h3>Registrarme</h3>
-    </a>
-
+<div class="container col-xxl-8 px-4 py-5">
+  <div
+    class="
+      row
+      flex-lg-row-reverse
+      align-items-center
+      justify-content-center
+      g-5
+      py-5
+    "
+  >
+    <div class="col-10 col-sm-8 col-lg-6">
+      <img
+        src="../../../assets/home-image.png"
+        class="d-block mx-lg-auto img-fluid"
+        alt="Bootstrap Themes"
+        loading="lazy"
+        style="height: 350px"
+      />
+    </div>
+    <div class="col-lg-6">
+      <h1 class="display-5 fw-bold lh-1 mb-3">Manteniendo el equipo unido</h1>
+      <p class="lead">
+        BuisnessMSGR tiene como objetivo brindar herramientas de comunicación
+        entre personas de la misma empresa. Utilizando esta aplicación queremos
+        que puedas comunicarte de manera rápida y efectiva con tus compañeros de
+        trabajo. <br />
+        Exitos!
+      </p>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+        <a
+          routerLink="/user"
+          type="button"
+          class="btn btn-primary btn-lg px-4 me-md-2"
+        >
+          Comenzar
+        </a>
+        <button type="button" class="btn btn-outline-secondary btn-lg px-4">
+          Default
+        </button>
+      </div>
+    </div>
   </div>
 </div>

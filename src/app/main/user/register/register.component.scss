@@ -2,16 +2,24 @@
 
 .container {
   display: flex;
-  min-height: 80%;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-
+  justify-content: flex-start;
+  height: fit-content;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  margin-top: 2%;
+  width: fit-content;
+  margin-bottom: 3%;
   &__form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    & .btn-registrar {
+      background: linear-gradient(#f1d34d, #fcff3d);
+      height: 100%;
+    }
   }
 
   & h1 {
