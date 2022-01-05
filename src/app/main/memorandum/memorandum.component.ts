@@ -11,10 +11,17 @@ export class MemorandumComponent implements OnInit {
   countReceived = 0;
   countSent = 0;
 
-  constructor(private _memorandumService: MemorandumService, private router: Router) {}
+  constructor(
+    private _memorandumService: MemorandumService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
-    this._memorandumService.getReceived().subscribe((e) => (this.countReceived = e.length));
-    this._memorandumService.getSent().subscribe((e) => (this.countSent = e.length));
+    this._memorandumService
+      .getReceived()
+      .subscribe((e) => (this.countReceived = e.length));
+    this._memorandumService
+      .getSent()
+      .subscribe((e) => (this.countSent = e.length));
   }
 }

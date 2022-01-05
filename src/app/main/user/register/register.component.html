@@ -11,9 +11,7 @@
         <mat-form-field appearance="outline">
           <mat-label>Nombre</mat-label>
           <input matInput placeholder="Nombre" formControlName="firstName" />
-          <mat-icon [ngStyle]="{ color: 'white' }" matSuffix
-            >sentiment_very_satisfied</mat-icon
-          >
+
           <mat-hint>Ingrese su nombre</mat-hint>
         </mat-form-field>
       </p>
@@ -21,9 +19,7 @@
         <mat-form-field appearance="outline">
           <mat-label>Apellido</mat-label>
           <input matInput placeholder="Apellido" formControlName="lastName" />
-          <mat-icon [ngStyle]="{ color: 'white' }" matSuffix
-            >sentiment_very_satisfied</mat-icon
-          >
+
           <mat-hint>Ingrese su apellido</mat-hint>
         </mat-form-field>
       </p>
@@ -36,7 +32,7 @@
             formControlName="userName"
           />
           <mat-icon [ngStyle]="{ color: 'white' }" matSuffix
-            >sentiment_very_satisfied</mat-icon
+            >account_circle</mat-icon
           >
           <mat-hint>Ingrese un nuevo nombre de usuario</mat-hint>
         </mat-form-field>
@@ -54,6 +50,7 @@
             [ngStyle]="{ color: color }"
             matSuffix
             (click)="hide = !hide"
+            style="cursor: pointer"
           >
             {{ hide ? "visibility_off" : "visibility" }}</mat-icon
           >

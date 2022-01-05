@@ -30,3 +30,8 @@ mat-icon {
 .btn-ingresar {
   background: linear-gradient(#f1d34d, #fcff3d);
 }
+
+::ng-deep .mat-snack-bar-container {
+  color: rgb(245, 124, 124);
+  border-color: #414b64 !important;
+}

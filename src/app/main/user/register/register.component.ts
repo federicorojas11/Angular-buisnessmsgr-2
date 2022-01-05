@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../../memorandum/models/user';
 import { Router } from '@angular/router';
 
-
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -18,16 +17,19 @@ export class RegisterComponent implements OnInit {
   countryId = 0;
   hide = true;
   color = 'grey';
-  registered:User;
+  registered: User;
 
-  form = new FormGroup({
-    firstName: new FormControl('', Validators.required),
-    lastName: new FormControl('', Validators.minLength(8)),
-    userName: new FormControl('', Validators.required),
-    password: new FormControl('', Validators.required),
-    city: new FormControl('', Validators.required),
-    country: new FormControl('', Validators.required),
-  }, {updateOn:'blur'});
+  form = new FormGroup(
+    {
+      firstName: new FormControl('', Validators.required),
+      lastName: new FormControl('', Validators.minLength(8)),
+      userName: new FormControl('', Validators.required),
+      password: new FormControl('', Validators.required),
+      city: new FormControl('', Validators.required),
+      country: new FormControl('', Validators.required),
+    },
+    { updateOn: 'blur' }
+  );
 
   constructor(private _userService: UserService, private router: Router) {}
 
@@ -48,7 +50,6 @@ export class RegisterComponent implements OnInit {
         this.color = 'grey';
       } else this.color = 'black';
     });
-
   }
 
   // Retorna el id del pais recibido por parametro
@@ -59,15 +60,15 @@ export class RegisterComponent implements OnInit {
         return this.countries[i].id;
       }
     }
-    //console.log('country id: ' + country_id);
+    console.log('country id: ' + country_id);
     return country_id;
   }
 
   registerNewUser(user: User) {
-    this._userService.register(user).subscribe(e => {
+    this._userService.register(user).subscribe((e) => {
       this.registered = e;
       console.log(this.registered);
-      this.router.navigate(['/user/login'], {state:this.registered});
+      this.router.navigate(['/user/login'], { state: this.registered });
     });
   }
 }

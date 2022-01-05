@@ -1,7 +1,8 @@
 mat-toolbar {
   border-bottom: 3px solid rgba(255, 255, 255, 0.507);
   background: linear-gradient(rgb(12, 5, 32), rgb(2, 1, 66));
-  width: 100% !important;
+  width: 100vw !important;
+  overflow: hidden;
 
   & .title {
     visibility: hidden;
